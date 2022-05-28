@@ -1,6 +1,6 @@
 Package: htmcglm
 Title: Hypothesis testing for McGLMs
-Version: 0.0.0.1
+Version: 0.0.0.9000
 Authors@R: c(person(c("Lineu Alberto","Cavazani"), "de Freitas", role = c("aut", "cre"),
                     email = "lineuacf@gmail.com"),
 	     person(c("Wagner","Hugo"), "Bonat", role = "ctb"),

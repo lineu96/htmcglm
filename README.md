@@ -15,14 +15,7 @@ This package is part of the Masters dissertation of the first author.
 You can install the development version of htmcglm like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
+library(devtools)
+install_github("lineu96/htmcglm")
 library(htmcglm)
-## basic example code
 ```
