@@ -7,11 +7,11 @@
 #'     (aka least squares mean) and return the matrix that define the
 #'     contrasts among these means. All pairwise contrasts are returned
 #'     (aka Tukey contrasts). The matrix with these contrasts can be
-#'     passed to \code{\link[multcomp]{glht}()} to estimate them or used
+#'     passed to glht::multcomp() to estimate them or used
 #'     in explicit matricial calculus.
 #' @param lfm a \eqn{k \times p} matrix where each line defines a linear
 #'     function to estimate a lsmean. In general, these matrices are
-#'     obtained by using \code{\link[doBy]{LSmatrix}()}.
+#'     obtained by using doBy::LSmatrix().
 #' @param lev a character vector with length equals to the numbers of
 #'     lines of \code{lfm} matrix, (\eqn{k}). Default is \code{NULL} and
 #'     the row names of code{lfm} is used. If row names is also
@@ -19,7 +19,7 @@
 #'     comparisons.
 #' @return a \eqn{K\times p} matrix with the linear functions that
 #'     define all pairwise contrasts. \eqn{K} is \eqn{{k}\choose{2}}.
-#' @seealso \code{\link{apmc}()}, \code{\link[doBy]{LSmatrix}()}.
+#' @seealso doBy::LSmatrix().
 #' @examples
 #'
 #' X <- diag(3)

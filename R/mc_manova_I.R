@@ -49,7 +49,7 @@
 #'                    Ntrial = list(NULL,
 #'                                  NULL,
 #'                                  soya$totalpeas),
-#'                    power_fixed = c(T,T,T),
+#'                    power_fixed = c(TRUE,TRUE,TRUE),
 #'                    data = soya)
 #'
 #' mc_manova_I(fit_joint)

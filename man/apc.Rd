@@ -9,7 +9,7 @@ apc(lfm, lev = NULL)
 \arguments{
 \item{lfm}{a \eqn{k \times p} matrix where each line defines a linear
 function to estimate a lsmean. In general, these matrices are
-obtained by using \code{\link[doBy]{LSmatrix}()}.}
+obtained by using doBy::LSmatrix().}
 
 \item{lev}{a character vector with length equals to the numbers of
 lines of \code{lfm} matrix, (\eqn{k}). Default is \code{NULL} and
@@ -27,7 +27,7 @@ linear function of the parameters to estimate a marginal mean
 (aka least squares mean) and return the matrix that define the
 contrasts among these means. All pairwise contrasts are returned
 (aka Tukey contrasts). The matrix with these contrasts can be
-passed to \code{\link[multcomp]{glht}()} to estimate them or used
+passed to glht::multcomp() to estimate them or used
 in explicit matricial calculus.
 }
 \examples{
@@ -48,7 +48,7 @@ apc(X)
 
 }
 \seealso{
-\code{\link{apmc}()}, \code{\link[doBy]{LSmatrix}()}.
+doBy::LSmatrix().
 }
 \author{
 Walmes Zeviani, \email{walmes@ufpr.br}.

@@ -111,6 +111,8 @@ mc_manova_II <- function(object){
 
   beta_names <- object$beta_names[[1]]
 
+  interacao <- NULL
+
   testes <- data.frame(beta_names,
                        interacao = stringr::str_detect(beta_names, ':'))
 

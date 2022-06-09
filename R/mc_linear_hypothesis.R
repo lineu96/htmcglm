@@ -5,6 +5,13 @@
 #'
 #' @export
 #'
+#' @import mcglm
+#' @import Matrix
+#'
+#' @importFrom stats as.formula binomial coef dist fitted glm make.link
+#' model.frame model.matrix na.exclude pchisq qchisq qnorm pnorm quasi
+#' residuals vcov model.response terms p.adjust
+#'
 #' @title Test Linear Hypothesis
 #'
 #' @description Performs Wald tests for testing a linear hypothesis for

@@ -133,6 +133,8 @@ mc_anova_II <- function(object){
 
   testes <- list()
 
+  interacao <- NULL
+
   for (i in 1:length(L_all)) {
     testes[[i]] <- data.frame(beta_names = beta_names[[i]],
                               interacao = stringr::str_detect(

@@ -1,4 +1,4 @@
-#' @name mc_manova_disp
+#' @name mc_manova_dispersion
 #'
 #' @author Lineu Alberto Cavazani de Freitas,
 #' \email{lineuacf@@gmail.com}
@@ -60,12 +60,12 @@
 #'                    power_fixed = c(TRUE,TRUE,TRUE),
 #'                    data = soya)
 #'
-#' mc_manova_disp(fit_joint,
+#' mc_manova_dispersion(fit_joint,
 #'                p_var = c(0,1),
 #'                names = c('tau11', 'tau21'))
 #'
 
-mc_manova_disp <- function(object, p_var, names){
+mc_manova_dispersion <- function(object, p_var, names){
 
   # Vetor tau
   tau <- coef(object, type = "tau")[,c(1,2,4)]

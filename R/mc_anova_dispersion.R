@@ -1,4 +1,4 @@
-#' @name mc_anova_disp
+#' @name mc_anova_dispersion
 #'
 #' @author Lineu Alberto Cavazani de Freitas,
 #' \email{lineuacf@@gmail.com}
@@ -60,14 +60,14 @@
 #'                    power_fixed = c(TRUE,TRUE,TRUE),
 #'                    data = soya)
 #'
-#' mc_anova_disp(fit_joint,
+#' mc_anova_dispersion(fit_joint,
 #' p_var = list(c(0,1), c(0,1), c(0,1)),
 #' names = list(c('tau10', 'tau11'),
 #'              c('tau20', 'tau11'),
 #'              c('tau30', 'tau11')))
 #'
 
-mc_anova_disp <- function(object, p_var, names){
+mc_anova_dispersion <- function(object, p_var, names){
 
   # Vetor tau e indice de resposta
   tau <- coef(object, type = "tau")[,c(1,2, 4)]
@@ -96,6 +96,8 @@ mc_anova_disp <- function(object, p_var, names){
       padrao[i] <- sjmisc::str_contains(rownames(vcov(object))[i],
                                         pattern = paste0('tau',j))
     }
+
+    id <- NULL
 
     names2 <- data.frame(row_names = row.names(vcov(object)),
                          id = padrao)
