@@ -4,10 +4,13 @@
 \alias{mc_manova_I}
 \title{MANOVA type I table for mcglm objects via Wald test.}
 \usage{
-mc_manova_I(object)
+mc_manova_I(object, verbose = TRUE)
 }
 \arguments{
 \item{object}{An object of \code{mcglm} class.}
+
+\item{verbose}{a logical if TRUE print some information about the
+tests performed. Default verbose = TRUE.}
 }
 \value{
 Type I MANOVA table for mcglm objects.

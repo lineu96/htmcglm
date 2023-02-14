@@ -4,7 +4,7 @@
 \alias{mc_anova_dispersion}
 \title{ANOVA tables for dispersion components.}
 \usage{
-mc_anova_dispersion(object, p_var, names)
+mc_anova_dispersion(object, p_var, names, verbose = TRUE)
 }
 \arguments{
 \item{object}{An object of \code{mcglm} class.}
@@ -14,6 +14,9 @@ parameters are related. Parameters with the same index are tested
 together.}
 
 \item{names}{Names to be shown in the table.}
+
+\item{verbose}{a logical if TRUE print some information about the
+tests performed. Default verbose = TRUE.}
 }
 \value{
 Type III ANOVA table for dispersion components of mcglm
@@ -62,8 +65,8 @@ fit_joint <- mcglm(linear_pred = c(form.grain,
 mc_anova_dispersion(fit_joint,
 p_var = list(c(0,1), c(0,1), c(0,1)),
 names = list(c('tau10', 'tau11'),
-             c('tau20', 'tau11'),
-             c('tau30', 'tau11')))
+             c('tau20', 'tau21'),
+             c('tau30', 'tau31')))
 
 }
 \seealso{

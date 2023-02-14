@@ -11,6 +11,9 @@
 #' variance tables per response for model objects produced by mcglm.
 #'
 #' @param object An object of \code{mcglm} class.
+#' 
+#' @param verbose a logical if TRUE print some information about the 
+#' tests performed. Default verbose = TRUE.
 #'
 #' @return Type III ANOVA table for mcglm objects.
 #'
@@ -55,7 +58,7 @@
 #' mc_anova_III(fit_joint)
 #'
 
-mc_anova_III <- function(object){
+mc_anova_III <- function(object, verbose = TRUE){
 
   # Vetor beta chapeu e indice de resposta
   beta <- coef(object, type = "beta")[,c(1, 4)]
@@ -159,14 +162,19 @@ mc_anova_III <- function(object){
 
   #----------------------------------------------------------------
 
-  cat("ANOVA type III using Wald statistic for fixed effects\n\n")
-  for (i in 1:n_resp) {
-    cat("Call: ")
-    print(object$linear_pred[[i]])
-    cat("\n")
-    print(tabela[[i]])
-    cat("\n")
+  if (verbose == TRUE) {
+    cat("ANOVA type III using Wald statistic for fixed effects\n\n")
+    for (i in 1:n_resp) {
+      cat("Call: ")
+      print(object$linear_pred[[i]])
+      cat("\n")
+      print(tabela[[i]])
+      cat("\n")
+    }
+    
+    return(invisible(tabela))
+  } else {
+    return(tabela)
   }
-
-  return(invisible(tabela))
+  
 }

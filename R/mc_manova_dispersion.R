@@ -18,6 +18,9 @@
 #' together.
 #'
 #' @param names Names to be shown in the table.
+#' 
+#' @param verbose a logical if TRUE print some information about the 
+#' tests performed. Default verbose = TRUE.
 #'
 #' @return Type III MANOVA table for dispersion components of mcglm
 #' objects.
@@ -65,7 +68,7 @@
 #'                names = c('tau11', 'tau21'))
 #'
 
-mc_manova_dispersion <- function(object, p_var, names){
+mc_manova_dispersion <- function(object, p_var, names, verbose = TRUE){
 
   # Vetor tau
   tau <- coef(object, type = "tau")[,c(1,2,4)]
@@ -168,13 +171,17 @@ mc_manova_dispersion <- function(object, p_var, names){
                        check.names = F)
 
   #----------------------------------------------------------------
-
-  cat("MANOVA type III using Wald statistic for dispersion parameters\n\n")
-  cat("Call: ")
-  cat(paste0('~ ', preds[[1]]))
-  cat("\n")
-  print(tabela)
-
-  return(invisible(tabela))
-
+  
+  if (verbose == TRUE) {
+    cat("MANOVA type III using Wald statistic for dispersion parameters\n\n")
+    cat("Call: ")
+    cat(paste0('~ ', preds[[1]]))
+    cat("\n")
+    print(tabela)
+    
+    return(invisible(tabela))
+  } else {
+    return(tabela)
+  }
+  
 }

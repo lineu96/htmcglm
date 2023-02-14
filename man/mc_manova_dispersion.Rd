@@ -4,7 +4,7 @@
 \alias{mc_manova_dispersion}
 \title{MANOVA tables for dispersion components.}
 \usage{
-mc_manova_dispersion(object, p_var, names)
+mc_manova_dispersion(object, p_var, names, verbose = TRUE)
 }
 \arguments{
 \item{object}{An object of \code{mcglm} class.}
@@ -14,6 +14,9 @@ parameters are related. Parameters with the same index are tested
 together.}
 
 \item{names}{Names to be shown in the table.}
+
+\item{verbose}{a logical if TRUE print some information about the
+tests performed. Default verbose = TRUE.}
 }
 \value{
 Type III MANOVA table for dispersion components of mcglm

@@ -4,7 +4,7 @@
 \alias{mc_multcomp}
 \title{Multiple comparisons test for each response.}
 \usage{
-mc_multcomp(object, effect, data)
+mc_multcomp(object, effect, data, verbose = TRUE)
 }
 \arguments{
 \item{object}{An object of \code{mcglm} class.}
@@ -13,6 +13,9 @@ mc_multcomp(object, effect, data)
 of these the estimate will be calculated.}
 
 \item{data}{Data frame with the dataset used in the model.}
+
+\item{verbose}{a logical if TRUE print some information about the
+tests performed. Default verbose = TRUE.}
 }
 \value{
 Table of multiple comparisons.

@@ -4,13 +4,16 @@
 \alias{mc_linear_hypothesis}
 \title{Test Linear Hypothesis}
 \usage{
-mc_linear_hypothesis(object, hypothesis)
+mc_linear_hypothesis(object, hypothesis, verbose = TRUE)
 }
 \arguments{
 \item{object}{An object of \code{mcglm} class.}
 
 \item{hypothesis}{A vector of strings with the hypotheses to be
 tested.}
+
+\item{verbose}{a logical if TRUE print some information about the
+tests performed. Default verbose = TRUE.}
 }
 \value{
 Table result of the hypothesis test specified.

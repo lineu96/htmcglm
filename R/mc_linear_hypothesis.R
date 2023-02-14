@@ -21,6 +21,9 @@
 #'
 #' @param hypothesis A vector of strings with the hypotheses to be
 #' tested.
+#' 
+#' @param verbose a logical if TRUE print some information about the 
+#' tests performed. Default verbose = TRUE.
 #'
 #' @return Table result of the hypothesis test specified.
 #'
@@ -88,7 +91,7 @@
 #' mc_linear_hypothesis(object =  fit_joint,
 #'                      hypothesis = c('tau12 = tau22'))
 
-mc_linear_hypothesis <- function(object, hypothesis){
+mc_linear_hypothesis <- function(object, hypothesis, verbose = TRUE){
 
   # Vetor beta chapeu
   coefs <- coef(object, type = c("beta", "tau", "power"))
@@ -188,22 +191,26 @@ mc_linear_hypothesis <- function(object, hypothesis){
 
   #----------------------------------------------------------------
 
-  cat("Linear hypothesis test")
-  cat("\n\n")
-  cat("Hypothesis:")
-
-
-  print_hyp <- as.data.frame(hypothesis)
-  names(print_hyp) <- NULL
-  print(print_hyp)
-
-  cat("\n")
-
-  cat("Results:\n")
-
-  print(tabela)
-  cat("\n")
-
-  return(invisible(tabela))
+  if (verbose == TRUE) {
+    cat("Linear hypothesis test")
+    cat("\n\n")
+    cat("Hypothesis:")
+    
+    
+    print_hyp <- as.data.frame(hypothesis)
+    names(print_hyp) <- NULL
+    print(print_hyp)
+    
+    cat("\n")
+    
+    cat("Results:\n")
+    
+    print(tabela)
+    cat("\n")
+    
+    return(invisible(tabela))
+  } else {
+    return(tabela)
+  }
 
 }

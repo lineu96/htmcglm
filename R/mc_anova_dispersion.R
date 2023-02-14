@@ -18,6 +18,9 @@
 #' together.
 #'
 #' @param names Names to be shown in the table.
+#' 
+#' @param verbose a logical if TRUE print some information about the 
+#' tests performed. Default verbose = TRUE.
 #'
 #' @return Type III ANOVA table for dispersion components of mcglm
 #' objects.
@@ -63,11 +66,11 @@
 #' mc_anova_dispersion(fit_joint,
 #' p_var = list(c(0,1), c(0,1), c(0,1)),
 #' names = list(c('tau10', 'tau11'),
-#'              c('tau20', 'tau11'),
-#'              c('tau30', 'tau11')))
+#'              c('tau20', 'tau21'),
+#'              c('tau30', 'tau31')))
 #'
 
-mc_anova_dispersion <- function(object, p_var, names){
+mc_anova_dispersion <- function(object, p_var, names, verbose = TRUE){
 
   # Vetor tau e indice de resposta
   tau <- coef(object, type = "tau")[,c(1,2, 4)]
@@ -164,16 +167,20 @@ mc_anova_dispersion <- function(object, p_var, names){
   }
 
   #----------------------------------------------------------------
-
-  cat(
-    "ANOVA type III using Wald statistic for dispersion parameters\n\n")
-  for (i in 1:n_resp) {
-    cat("Call: ")
-    print(object$linear_pred[[i]])
-    cat("\n")
-    print(tabela[[i]])
-    cat("\n")
+  
+  if (verbose == TRUE) {
+    cat(
+      "ANOVA type III using Wald statistic for dispersion parameters\n\n")
+    for (i in 1:n_resp) {
+      cat("Call: ")
+      print(object$linear_pred[[i]])
+      cat("\n")
+      print(tabela[[i]])
+      cat("\n")
+    } 
+    return(invisible(tabela))
+  } else {
+    return(tabela)
   }
 
-  return(invisible(tabela))
 }

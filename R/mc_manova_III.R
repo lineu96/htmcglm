@@ -11,6 +11,9 @@
 #' analysis-of-variance tables for model objects produced by mcglm.
 #'
 #' @param object An object of \code{mcglm} class.
+#' 
+#' @param verbose a logical if TRUE print some information about the 
+#' tests performed. Default verbose = TRUE.
 #'
 #' @return Type III MANOVA table for mcglm objects.
 #'
@@ -55,7 +58,7 @@
 #' mc_manova_III(fit_joint)
 #'
 
-mc_manova_III <- function(object){
+mc_manova_III <- function(object, verbose = TRUE){
 
   #----------------------------------------------------------------
 
@@ -156,13 +159,18 @@ mc_manova_III <- function(object){
                        check.names = F)
 
   #----------------------------------------------------------------
-
-  cat("MANOVA type III using Wald statistic for fixed effects\n\n")
-  cat("Call: ")
-  cat(paste0('~ ', preds[[1]]))
-  cat("\n")
-  print(tabela)
-
-  return(invisible(tabela))
-
+  
+  
+  if (verbose == TRUE) {
+    cat("MANOVA type III using Wald statistic for fixed effects\n\n")
+    cat("Call: ")
+    cat(paste0('~ ', preds[[1]]))
+    cat("\n")
+    print(tabela)
+    
+    return(invisible(tabela))
+  } else {
+    return(tabela)
+  }
+  
 }

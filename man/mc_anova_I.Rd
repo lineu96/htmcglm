@@ -4,10 +4,13 @@
 \alias{mc_anova_I}
 \title{ANOVA type I table for mcglm objects via Wald test.}
 \usage{
-mc_anova_I(object)
+mc_anova_I(object, verbose = TRUE)
 }
 \arguments{
 \item{object}{An object of \code{mcglm} class.}
+
+\item{verbose}{a logical if TRUE print some information about the
+tests performed. Default verbose = TRUE.}
 }
 \value{
 Type I ANOVA table for mcglm objects.

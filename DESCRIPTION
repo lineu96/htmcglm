@@ -1,11 +1,16 @@
 Package: htmcglm
-Title: Hypothesis testing for McGLMs
+Type: Package
+Title: Hypothesis Testing for McGLMs
 Version: 0.0.1
+Author: Lineu Alberto Cavazani de Freitas [aut, cre],
+  Wagner Hugo Bonat [ctb],
+  Walmes Marques Zeviani [ctb]
+Maintainer: Lineu Alberto Cavazani de Freitas <lineuacf@gmail.com>
 Authors@R: c(person(c("Lineu Alberto","Cavazani"), "de Freitas", role = c("aut", "cre"),
                     email = "lineuacf@gmail.com"),
 	     person(c("Wagner","Hugo"), "Bonat", role = "ctb"),
 	     person(c("Walmes", "Marques"), "Zeviani", role = "ctb"))
-Description: Performs hypothesis testing for McGLMs multivariate covariance generalized linear
+Description: Performs hypothesis testing for multivariate covariance generalized linear
      models (McGLMs).  McGLM is a general framework for non-normal
      multivariate data analysis, designed to handle multivariate response
      variables, along with a wide range of temporal and spatial correlation
@@ -23,6 +28,7 @@ Description: Performs hypothesis testing for McGLMs multivariate covariance gene
      The package offers a user-friendly interface for fitting McGLMs
      similar to the glm() R function.
 License: MIT + file LICENSE
+URL: https://github.com/lineu96/htmcglm
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0

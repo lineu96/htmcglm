@@ -27,9 +27,9 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 Imports: 
+    stats,
     doBy,
     Matrix,
     mcglm,
     sjmisc,
-    stats,
     stringr

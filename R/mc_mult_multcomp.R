@@ -17,6 +17,9 @@
 #' the estimate will be calculated.
 #'
 #' @param data Data frame with the dataset used in the model.
+#' 
+#' @param verbose a logical if TRUE print some information about the 
+#' tests performed. Default verbose = TRUE.
 #'
 #' @return Table of multiple comparisons.
 #'
@@ -70,7 +73,7 @@
 #'                  data = soya)
 #'
 
-mc_mult_multcomp <- function(object, effect, data){
+mc_mult_multcomp <- function(object, effect, data, verbose = TRUE){
 
   # Obter a matriz de combinações lineares dos parâmetros dos
   # modelos que resultam nas médias ajustadas (geralmente denotada
@@ -172,13 +175,17 @@ mc_mult_multcomp <- function(object, effect, data){
                        check.names = F)
 
   #----------------------------------------------------------------
-
-  cat("Multivariate multiple comparisons test using Wald statistic\n\n")
-  cat("Call: ")
-  cat(paste0('~ ', preds[[1]]))
-  cat("\n")
-  print(tabela)
-
-  return(invisible(tabela))
+  
+  if (verbose == TRUE) {
+    cat("Multivariate multiple comparisons test using Wald statistic\n\n")
+    cat("Call: ")
+    cat(paste0('~ ', preds[[1]]))
+    cat("\n")
+    print(tabela)
+    
+    return(invisible(tabela))
+  } else {
+    return(tabela)
+  }
 
 }

@@ -11,6 +11,9 @@
 #' variance tables per response for model objects produced by mcglm.
 #'
 #' @param object An object of \code{mcglm} class.
+#' 
+#' @param verbose a logical if TRUE print some information about the 
+#' tests performed. Default verbose = TRUE.
 #'
 #' @return Type II ANOVA table for mcglm objects.
 #'
@@ -55,7 +58,7 @@
 #' mc_anova_II(fit_joint)
 #'
 
-mc_anova_II <- function(object){
+mc_anova_II <- function(object, verbose = TRUE){
 
   #----------------------------------------------------------------
 
@@ -231,15 +234,20 @@ mc_anova_II <- function(object){
   }
 
   #----------------------------------------------------------------
-
-  cat("ANOVA type II using Wald statistic for fixed effects\n\n")
-  for (i in 1:n_resp) {
-    cat("Call: ")
-    print(object$linear_pred[[i]])
-    cat("\n")
-    print(tabela[[i]])
-    cat("\n")
+  
+  if (verbose == TRUE) {
+    cat("ANOVA type II using Wald statistic for fixed effects\n\n")
+    for (i in 1:n_resp) {
+      cat("Call: ")
+      print(object$linear_pred[[i]])
+      cat("\n")
+      print(tabela[[i]])
+      cat("\n")
+    }
+    
+    return(invisible(tabela))
+  } else {
+    return(tabela)
   }
 
-  return(invisible(tabela))
 }
